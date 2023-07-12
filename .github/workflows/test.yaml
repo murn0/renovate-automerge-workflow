@@ -7,15 +7,13 @@ on: pull_request
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
     permissions:
       contents: read
-    steps:
-      - uses: ./.github/workflows/main.yaml
-        with:
-          filters: |
-            ghalint:
-              - .github/workflows/*.yaml
-              - aqua/aqua.yaml
-              - aqua/imports/ghalint.yaml
-              - ghalint.yaml
+    uses: ./.github/workflows/main.yaml
+    with:
+      filters: |
+        ghalint:
+          - .github/workflows/*.yaml
+          - aqua/aqua.yaml
+          - aqua/imports/ghalint.yaml
+          - ghalint.yaml

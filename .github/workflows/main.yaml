@@ -5,6 +5,11 @@ on:
       filters:
         required: false
         type: string
+    secrets:
+      gh_app_id:
+        required: true
+      gh_app_private_key:
+        required: true
 
 jobs:
   path-filter:
@@ -32,11 +37,36 @@ jobs:
     uses: ./.github/workflows/wc-renovate-config-validator.yaml
     permissions:
       contents: read
+  
+  update-aqua-checksums:
+    needs: path-filter
+    if: needs.path-filter.outputs.update-aqua-checksums == 'true'
+    uses: ./.github/workflows/wc-update-aqua-checksums.yaml
+    permissions:
+      contents: read
+    secrets:
+      gh_app_id: ${{secrets.gh_app_id}}
+      gh_app_private_key: ${{secrets.gh_app_private_key}}
 
   status-check:
     needs:
       - ghalint
       - renovate-config-validator
+      - update-aqua-checksums
     if: failure()
     uses: ./.github/workflows/wc-status-check.yaml
     permissions: {}
+
+  enable-automerge:
+    needs:
+      - status-check
+    # "! failure() && ! cancelled()" is required. success() returns false if dependent jobs are skipped.
+    # https://github.com/community/community/discussions/45058
+    # By default success() is used so we have to override success() by "! failure() && ! cancelled()"
+    if: |
+      ! failure() && ! cancelled() && github.event.pull_request.user.login == 'renovate[bot]' && contains(github.event.pull_request.body, ' **Automerge**: Enabled.')
+    uses: ./.github/workflows/wc-enable-auto-merge.yaml
+    permissions: {}
+    secrets:
+      gh_app_id: ${{secrets.gh_app_id}}
+      gh_app_private_key: ${{secrets.gh_app_private_key}}

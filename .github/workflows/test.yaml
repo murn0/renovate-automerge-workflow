@@ -1,22 +1,26 @@
 name: test
-on:
-  push:
-    paths:
-      - .github/workflows/main.yaml
-      - .github/workflows/test.yaml
+on: pull_request
+  # push:
+  #   paths:
+  #     - .github/workflows/main.yaml
+  #     - .github/workflows/test.yaml
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
     permissions:
       contents: read
-    steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-      - uses: ./.github/workflows/main.yaml
-        with:
-          filters: |
-            ghalint:
-              - .github/workflows/*.yaml
-              - aqua/aqua.yaml
-              - aqua/imports/ghalint.yaml
-              - ghalint.yaml
+    uses: ./.github/workflows/main.yaml
+    with:
+      filters: |
+        ghalint:
+          - .github/workflows/*.yaml
+          - aqua/aqua.yaml
+          - aqua/imports/ghalint.yaml
+          - ghalint.yaml
+        renovate-config-validator:
+          - renovate.json
+          - .github/workflows/test.yaml
+          - .github/workflows/wc-renovate-config-validator.yaml
+    secrets:
+      gh_app_id: ${{secrets.GH_APP_ID}}
+      gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

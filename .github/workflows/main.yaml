@@ -1,0 +1,42 @@
+name: Renovate Automerge workflows
+on:
+  workflow_call:
+    inputs:
+      filters:
+        required: false
+        type: string
+
+jobs:
+  path-filter:
+    outputs:
+      ghalint: ${{steps.changes.outputs.ghalint}}
+      renovate-config-validator: ${{steps.changes.outputs.renovate-config-validator}}
+      update-aqua-checksums: ${{steps.changes.outputs.update-aqua-checksums}}
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
+        id: changes
+        with:
+          filters: ${{inputs.filters}}
+  
+  ghalint:
+    needs: path-filter
+    if: needs.path-filter.outputs.ghalint == 'true'
+    uses: ./.github/workflows/wc-ghalint.yaml
+    permissions: {}
+
+  renovate-config-validator:
+    needs: path-filter
+    if: needs.path-filter.outputs.renovate-config-validator == 'true'
+    uses: ./.github/workflows/wc-renovate-config-validator.yaml
+    permissions:
+      contents: read
+
+  status-check:
+    needs:
+      - ghalint
+      - renovate-config-validator
+    if: failure()
+    uses: ./.github/workflows/wc-status-check.yaml
+    permissions: {}

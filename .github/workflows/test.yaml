@@ -1,9 +1,9 @@
 name: test
-on:
-  push:
-    paths:
-      - .github/workflows/main.yaml
-      - .github/workflows/test.yaml
+on: pull_request
+  # push:
+  #   paths:
+  #     - .github/workflows/main.yaml
+  #     - .github/workflows/test.yaml
 
 jobs:
   job1:
@@ -11,7 +11,6 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
       - uses: ./.github/workflows/main.yaml
         with:
           filters: |

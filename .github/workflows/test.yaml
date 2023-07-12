@@ -11,7 +11,7 @@ jobs:
       contents: read
     uses: ./.github/workflows/main.yaml
     with:
-      filters: |
+      ghalint_filter_paths: |
         - .github/workflows/*.yaml
         - aqua/aqua.yaml
         - aqua/imports/ghalint.yaml

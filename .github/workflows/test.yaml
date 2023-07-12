@@ -7,13 +7,12 @@ on:
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/main.yaml
-        with:
-          filters: |
-            ghalint:
-              - .github/workflows/*.yaml
-              - aqua/aqua.yaml
-              - aqua/imports/ghalint.yaml
-              - ghalint.yaml
+    permissions: {}
+    uses: ./.github/workflows/main.yaml
+    with:
+      filters: |
+        ghalint:
+          - .github/workflows/*.yaml
+          - aqua/aqua.yaml
+          - aqua/imports/ghalint.yaml
+          - ghalint.yaml

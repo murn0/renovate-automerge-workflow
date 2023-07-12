@@ -11,11 +11,16 @@ jobs:
       contents: read
     uses: ./.github/workflows/main.yaml
     with:
-      ghalint_filter_paths: |
-        - .github/workflows/*.yaml
-        - aqua/aqua.yaml
-        - aqua/imports/ghalint.yaml
-        - ghalint.yaml
+      filters: |
+        ghalint:
+          - .github/workflows/*.yaml
+          - aqua/aqua.yaml
+          - aqua/imports/ghalint.yaml
+          - ghalint.yaml
+        renovate-config-validator:
+          - renovate.json
+          - .github/workflows/test.yaml
+          - .github/workflows/wc-renovate-config-validator.yaml
     secrets:
       gh_app_id: ${{secrets.GH_APP_ID}}
       gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

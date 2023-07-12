@@ -2,10 +2,7 @@ name: Renovate Automerge workflows
 on:
   workflow_call:
     inputs:
-      # filters:
-      #   required: false
-      #   type: string
-      ghalint_filter_paths:
+      filters:
         required: false
         type: string
     secrets:
@@ -26,11 +23,7 @@ jobs:
       - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
         id: changes
         with:
-          filters: |
-            ghalint:
-              ${{inputs.ghalint_filter_paths}}
-      - run: |
-          cat ${{steps.changes.outputs}}
+          filters: ${{inputs.filters}}
   
   ghalint:
     needs: path-filter

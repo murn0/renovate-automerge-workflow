@@ -7,13 +7,16 @@ on:
 
 jobs:
   job1:
+    runs-on: ubuntu-latest
     permissions:
       contents: read
-    uses: ./.github/workflows/main.yaml
-    with:
-      filters: |
-        ghalint:
-          - .github/workflows/*.yaml
-          - aqua/aqua.yaml
-          - aqua/imports/ghalint.yaml
-          - ghalint.yaml
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: ./.github/workflows/main.yaml
+        with:
+          filters: |
+            ghalint:
+              - .github/workflows/*.yaml
+              - aqua/aqua.yaml
+              - aqua/imports/ghalint.yaml
+              - ghalint.yaml

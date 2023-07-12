@@ -7,8 +7,9 @@ on: pull_request
 
 jobs:
   job1:
-    # permissions:
-    #   contents: read
+    permissions:
+      contents: read
+      pull-requests: write
     uses: ./.github/workflows/main.yaml
     with:
       filters: |
@@ -17,3 +18,6 @@ jobs:
           - aqua/aqua.yaml
           - aqua/imports/ghalint.yaml
           - ghalint.yaml
+    secrets:
+      gh_app_id: ${{secrets.GH_APP_ID}}
+      gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

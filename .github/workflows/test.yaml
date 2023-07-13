@@ -15,12 +15,14 @@ jobs:
           - ghalint.yaml
         renovate-config-validator:
           - renovate.json
+          - .github/workflows/main.yaml
           - .github/workflows/test.yaml
           - .github/workflows/wc-renovate-config-validator.yaml
         update-aqua-checksums:
           - aqua/aqua.yaml
           - aqua/imports/*.yaml
           - aqua/aqua-checksums.json
+          - .github/workflows/main.yaml
           - .github/workflows/test.yaml
           - .github/workflows/wc-update-aqua-checksums.yaml
     secrets:

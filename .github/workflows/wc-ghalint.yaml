@@ -1,14 +1,8 @@
 ---
 name: ghalint
-on: 
-  workflow_call:
-    inputs:
-      aqua_config:
-        required: false
-        type: string
+on: workflow_call
 env:
   AQUA_LOG_COLOR: always
-  AQUA_CONFIG: ${{inputs.aqua_config}}
 jobs:
   ghalint:
     # Validate GitHub Actions Workflows by ghalint.

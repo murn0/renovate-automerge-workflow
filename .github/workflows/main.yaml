@@ -5,12 +5,6 @@ on:
       filters:
         required: false
         type: string
-      aqua_config:
-        required: false
-        type: string
-      working_directory:
-        required: false
-        type: string
     secrets:
       gh_app_id:
         required: true
@@ -36,8 +30,6 @@ jobs:
     if: needs.path-filter.outputs.ghalint == 'true'
     uses: ./.github/workflows/wc-ghalint.yaml
     permissions: {}
-    with:
-      aqua_config: ${{inputs.aqua_config}}
 
   renovate-config-validator:
     needs: path-filter
@@ -52,8 +44,6 @@ jobs:
     uses: ./.github/workflows/wc-update-aqua-checksums.yaml
     permissions:
       contents: read
-    with:
-      working_directory: ${{inputs.working_directory}}
     secrets:
       gh_app_id: ${{secrets.gh_app_id}}
       gh_app_private_key: ${{secrets.gh_app_private_key}}

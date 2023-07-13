@@ -1,0 +1,11 @@
+name: Pull Request
+on: pull_request
+
+jobs:
+  test:
+    permissions:
+      contents: read
+    uses: murn0/auto-add-labels-workflow/.github/workflows/main.yaml@906bde933b872c5f929bdb9177850f84cca60e9f # v0.1.0
+    secrets:
+      gh_app_id: ${{secrets.GH_APP_ID}}
+      gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

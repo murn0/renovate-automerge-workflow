@@ -8,6 +8,9 @@ on:
       aqua_config:
         required: false
         type: string
+      working_directory:
+        required: false
+        type: string
     secrets:
       gh_app_id:
         required: true
@@ -49,6 +52,8 @@ jobs:
     uses: ./.github/workflows/wc-update-aqua-checksums.yaml
     permissions:
       contents: read
+    with:
+      working_directory: ${{inputs.working_directory}}
     secrets:
       gh_app_id: ${{secrets.gh_app_id}}
       gh_app_private_key: ${{secrets.gh_app_private_key}}

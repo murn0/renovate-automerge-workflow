@@ -21,6 +21,12 @@ jobs:
           - renovate.json
           - .github/workflows/test.yaml
           - .github/workflows/wc-renovate-config-validator.yaml
+        update-aqua-checksums:
+          - aqua/aqua.yaml
+          - aqua/imports/*.yaml
+          - aqua/aqua-checksums.json
+          - .github/workflows/test.yaml
+          - .github/workflows/wc-update-aqua-checksums.yaml
     secrets:
       gh_app_id: ${{secrets.GH_APP_ID}}
       gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}
@@ -49,6 +55,7 @@ jobs:
           - .github/workflows/test.yaml
           - .github/workflows/wc-update-aqua-checksums.yaml
       aqua_config: .github/aqua/ci.yaml
+      working_directory: .github
     secrets:
       gh_app_id: ${{secrets.GH_APP_ID}}
       gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

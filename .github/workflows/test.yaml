@@ -1,12 +1,8 @@
 name: test
 on: pull_request
-  # push:
-  #   paths:
-  #     - .github/workflows/main.yaml
-  #     - .github/workflows/test.yaml
 
 jobs:
-  job1:
+  test:
     permissions:
       contents: read
     uses: ./.github/workflows/main.yaml
@@ -19,8 +15,16 @@ jobs:
           - ghalint.yaml
         renovate-config-validator:
           - renovate.json
+          - .github/workflows/main.yaml
           - .github/workflows/test.yaml
           - .github/workflows/wc-renovate-config-validator.yaml
+        update-aqua-checksums:
+          - aqua/aqua.yaml
+          - aqua/imports/*.yaml
+          - aqua/aqua-checksums.json
+          - .github/workflows/main.yaml
+          - .github/workflows/test.yaml
+          - .github/workflows/wc-update-aqua-checksums.yaml
     secrets:
       gh_app_id: ${{secrets.GH_APP_ID}}
       gh_app_private_key: ${{secrets.GH_APP_PRIVATE_KEY}}

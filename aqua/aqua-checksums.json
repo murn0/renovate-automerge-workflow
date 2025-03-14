@@ -1,28 +1,28 @@
 {
   "checksums": [
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_darwin_all.tar.gz",
-      "checksum": "19ABE5CC933BFCEAEABAF6A6F25EE43BC26E9D32C643CC0BBD90AC351FE136FE",
+      "id": "github_release/github.com/caarlos0/svu/v3.2.2/svu_3.2.2_darwin_all.tar.gz",
+      "checksum": "68F23764049839E00B229D909C8026ACC1241CEA0600213840B42EE762D1225A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_linux_amd64.tar.gz",
-      "checksum": "468469E8A319371A561AF2E1F03B979A2269943E6D76A03C3518D4BEA898294E",
+      "id": "github_release/github.com/caarlos0/svu/v3.2.2/svu_3.2.2_linux_amd64.tar.gz",
+      "checksum": "3887A0A95E7438226501590CF325289E97129DC3E2C9713950D76508F8ACFBDE",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_linux_arm64.tar.gz",
-      "checksum": "2C659CFAF85672D2C6673362BD18D6461E49C409CD6E3E31FBE807DE0E8036BE",
+      "id": "github_release/github.com/caarlos0/svu/v3.2.2/svu_3.2.2_linux_arm64.tar.gz",
+      "checksum": "615C64453789DB511B969EC36D5202D975DD4A075719990A6CC11DAA80B21078",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_windows_amd64.tar.gz",
-      "checksum": "696718AE3EF9146AB6794A2027600B58D7E15B41C003ADF91EC534792D5D8DF3",
+      "id": "github_release/github.com/caarlos0/svu/v3.2.2/svu_3.2.2_windows_amd64.zip",
+      "checksum": "2C5BE0F8E2636310D16568456CE0716CE20340186ED5859EE80401BB231BA48C",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_windows_arm64.tar.gz",
-      "checksum": "687D5BC02CDECA7F3B0BCEBAF913E0A6A967C99A344720508776F0965D9B8901",
+      "id": "github_release/github.com/caarlos0/svu/v3.2.2/svu_3.2.2_windows_arm64.zip",
+      "checksum": "F8FB500E76D96DD087A8C95541653FFD198D8CF4E7A2C951ED0B758C27B6150B",
       "algorithm": "sha256"
     },
     {

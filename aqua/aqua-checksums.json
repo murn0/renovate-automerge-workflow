@@ -1,28 +1,28 @@
 {
   "checksums": [
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_darwin_all.tar.gz",
-      "checksum": "19ABE5CC933BFCEAEABAF6A6F25EE43BC26E9D32C643CC0BBD90AC351FE136FE",
+      "id": "github_release/github.com/caarlos0/svu/v2.0.1/svu_2.0.1_darwin_all.tar.gz",
+      "checksum": "D92058EEE3437710BFE13D7D9BE559F191CDE254E36602A91BAB3CE236E4184F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_linux_amd64.tar.gz",
-      "checksum": "468469E8A319371A561AF2E1F03B979A2269943E6D76A03C3518D4BEA898294E",
+      "id": "github_release/github.com/caarlos0/svu/v2.0.1/svu_2.0.1_linux_amd64.tar.gz",
+      "checksum": "551D6D5DD48254C7690912DD9E4E6F520CBE70E2BE88AFD8D17BCE0071ADE476",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_linux_arm64.tar.gz",
-      "checksum": "2C659CFAF85672D2C6673362BD18D6461E49C409CD6E3E31FBE807DE0E8036BE",
+      "id": "github_release/github.com/caarlos0/svu/v2.0.1/svu_2.0.1_linux_arm64.tar.gz",
+      "checksum": "4BA4B500CF307B2F5431EF35AE32912F28934082AF7ACF2BCE0712769A35FB64",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_windows_amd64.tar.gz",
-      "checksum": "696718AE3EF9146AB6794A2027600B58D7E15B41C003ADF91EC534792D5D8DF3",
+      "id": "github_release/github.com/caarlos0/svu/v2.0.1/svu_2.0.1_windows_amd64.tar.gz",
+      "checksum": "A4EAA5075812D88E5BCF6B93BD74A32F14066FB3E1FF69D8DC30593CFD90F64D",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/caarlos0/svu/v1.12.0/svu_1.12.0_windows_arm64.tar.gz",
-      "checksum": "687D5BC02CDECA7F3B0BCEBAF913E0A6A967C99A344720508776F0965D9B8901",
+      "id": "github_release/github.com/caarlos0/svu/v2.0.1/svu_2.0.1_windows_arm64.tar.gz",
+      "checksum": "A46BE0F002C9A65D397D1EE326DF6CE3C2E4E8F25B32C9D02CE9A32FA7213A31",
       "algorithm": "sha256"
     },
     {
